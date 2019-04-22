@@ -151,6 +151,7 @@ select {
     display: inline-block;
 }
 
+
 #employee_name {
     color: #cccccc;
     width: 36%;
@@ -159,10 +160,39 @@ select {
     display: inline-block;
 }
 
+
 #header a {
     color: #eeeeee;
 }
 
+
 h1 a {
     color: #eeeeee;
+}
+
+
+table#report_list th {
+    font-weight: bold;
+    paddin: 10px 2%;
+}
+
+
+table#report_list .report_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+
+
+table#report_list .report_date {
+    width: 20%;
+}
+
+
+table#report_list .report_title {
+    width: 37%;
+}
+
+
+table#report_list .report_action {
+    width: 13%;
 }
