@@ -73,6 +73,10 @@ public class Employee {
     private Integer delete_flag;
 
 
+    @Column(name = "official_position")
+    private String official_position;
+
+
     public Integer getId() {
         return id;
     }
@@ -151,6 +155,17 @@ public class Employee {
     public void setDelete_flag(Integer delete_flag) {
         this.delete_flag = delete_flag;
     }
+
+
+    public String getOfficial_position() {
+        return official_position;
+    }
+
+
+    public void setOfficial_position(String official_position) {
+        this.official_position = official_position;
+    }
+
 
 
 

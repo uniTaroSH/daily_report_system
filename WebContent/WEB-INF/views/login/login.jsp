@@ -19,7 +19,7 @@
             <br /><br />
 
 
-            <label for="password">パスワード</label>
+            <label for="password">パスワード</label><br />
             <input type="password" name="password" />
             <br /><br />
 
