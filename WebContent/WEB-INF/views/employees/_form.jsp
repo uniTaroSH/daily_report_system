@@ -21,6 +21,11 @@
 <br /><br />
 
 
+<label for="official_position">役職</label><br />
+<input type="text" name="official_position" value="${employee.official_position}" />
+<br /><br />
+
+
 <label for="password">パスワード</label><br />
 <input type="password" name="password" />
 <br /><br />
