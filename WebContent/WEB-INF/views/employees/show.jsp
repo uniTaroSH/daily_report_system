@@ -26,6 +26,10 @@
                             <td><c:out value="${employee.name}" /></td>
                         </tr>
                         <tr>
+                            <th>役職</th>
+                            <td><c:out value="${employee.official_position}" /></td>
+                        </tr>
+                        <tr>
                             <th>権限</th>
                             <td>
                                 <c:choose>
