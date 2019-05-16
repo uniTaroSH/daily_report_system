@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Employee;
+import models.FollowList;
 import utils.DBUtil;
 
 /**
@@ -51,17 +52,33 @@ public class EmployeesIndexServlet extends HttpServlet {
                                             .getSingleResult();
 
 
+        Employee login_employee = (Employee)request.getSession().getAttribute("login_employee");
+        List<FollowList> followList = em.createNamedQuery("getMyFollowList", FollowList.class)
+                                            .setParameter("employee", login_employee)
+                                            .getResultList();
+
+
         em.close();
 
 
+        System.out.println("フォローリストサイズ：" + followList.size());
         request.setAttribute("employees", employees);
         request.setAttribute("employees_count", employees_count);
         request.setAttribute("page", page);
+
+//***********************************************************************************
+        request.setAttribute("followList", followList);
+        request.setAttribute("followListSize", followList.size());
+        request.setAttribute("Button_flag", "0");
+//************************************************************************************
+
+
         if(request.getSession().getAttribute("flush") != null){
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
         }
 
+        request.setAttribute("_token", request.getSession().getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/employees/index.jsp");
         rd.forward(request, response);

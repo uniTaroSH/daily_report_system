@@ -28,6 +28,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "checkLoginCodeAndPassword",
             query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
+            ),
+    @NamedQuery(
+            name = "getOneEmployee",
+            query = "SELECT e FROM Employee AS e WHERE e.id = :follow_id"
             )
 })
 //getAllEmployee・・・すべての従業員情報を取得
